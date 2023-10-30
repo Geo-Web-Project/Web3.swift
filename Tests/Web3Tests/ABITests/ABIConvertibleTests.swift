@@ -278,6 +278,12 @@ class ABIConvertibleTests: QuickSpec {
                     expect(Data(hexString: test)).to(equal(expected))
                 }
                 
+                it("should decode Data from dynamic empty bytes") {
+                    let expected = Data([])
+                    let test = "0000000000000000000000000000000000000000000000000000000000000000"
+                    expect(Data(hexString: test)).to(equal(expected))
+                }
+                
                 it("should decode Data from fixed bytes") {
                     let expected = Data([0, 111, 222])
                     let test = "006fde0000000000000000000000000000000000000000000000000000000000"

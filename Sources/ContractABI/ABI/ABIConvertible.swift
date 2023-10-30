@@ -285,7 +285,7 @@ extension Data: ABIConvertible {
         let lengthString = hexString.substr(0, 64)
         let valueString = String(hexString.dropFirst(64))
         //calculate length
-        guard let string = lengthString, let length = Int(string, radix: 16), length > 0 else { return nil }
+        guard let string = lengthString, let length = Int(string, radix: 16) else { return nil }
         //convert to bytes
         let bytes = valueString.hexToBytes()
         //trim bytes to length
